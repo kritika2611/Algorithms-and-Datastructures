@@ -1,47 +1,25 @@
-#include <iostream>
-#include <string>
-#include <cstring>
+#include <bits/stdc++.h>
 
 using namespace std;
+int main() {
+    char s[1000];
+    cin.getline(s,1000);
 
-char *mystrtok(char *s,char del){
-	static char *input=NULL;
-	if(s!=NULL)
-		input=s;
+    char *sptr=strtok(s," ");
+    while(sptr!=NULL){
+        cout<<sptr<<endl;
+        sptr=strtok(NULL," ");
+    }
+    cout<<endl;
 
-	char *output=new char[strlen(input)+1];
-
-	if(input==NULL){          //after traversing throughot the arr
-		output=NULL;
-		return output;
-	}
-	
-	
-	int i=0;
-	for(;input[i]!='\0';i++){
-		if(input[i]!=del){
-			output[i]=input[i];        //copying the arr till we find the delim
-		}
-		else{
-			output[i]='\0';
-			input=input+i+1;
-			return output;
-		}
-	}
-	output[i]='\0';
-	input=NULL;
-	return output;
-}
-
-int main(){
-	char arr[1000];
-	cin.getline(arr,1000);
-	char *ptr=mystrtok(arr,'!');
-	cout<<ptr<<endl;
-
-	while(ptr!=NULL){
-		ptr=mystrtok(NULL,'!');
-		cout<<ptr<<endl;
-	}
-	return 0;
+    //using strings
+    string s1;
+    getline(cin,s1);
+    char *ptr=strtok((char *)s1.c_str()," ");      // .c_str() converts string to char_array, then the char_array is typecasted as char *
+    
+    while(ptr!=NULL){
+        string sub_s(ptr);
+        cout<<sub_s<<":";
+        ptr=strtok(NULL," ");
+    }
 }

@@ -16,12 +16,24 @@ int str2int(char *s, int n){
     
 }
 
+int iterative_str2int(string s,int n){
+    int num=s[0]-'0';
+    for(int i=1;i<n;i++){
+        int digit=s[i]-'0';
+        num=num*10+digit;
+    }
+    return num;
+}
+
 int main()
 {
    char s[]="3704";
    int n=strlen(s);
    
    int ans=str2int(s,n);
-   cout<<ans;
+   cout<<ans<<endl;
+
+   string s1(s);
+   cout<<iterative_str2int(s1,n);
    return 0;
 }
