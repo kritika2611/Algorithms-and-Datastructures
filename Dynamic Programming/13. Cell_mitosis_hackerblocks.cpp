@@ -1,5 +1,5 @@
 /*********************************************************************************************************************************************
-														CELL MITOSIS
+																CELL MITOSIS
 There's a scientist named Brook who is interested in budding of cells. He has one container which initially contains only a single cell. Now 
 Brook wants n number of cells in his container. So he can change the number of cells in container in 3 different ways -:
 
